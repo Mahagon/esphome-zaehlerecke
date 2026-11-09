@@ -9,32 +9,20 @@ Ein ESP32-DevKit liest den Gaszähler und den Hauptwasserzähler aus und schickt
 
 ## Verdrahtung
 
-``` plain
-                 ESP32-DevKit
-              ┌────────────────┐
-              │                │      Reedkontakt MK04 (Gas)
-              │  GPIO27  ●─────┼─────────────┐
-              │                │             o
-              │                │              /   Schließer
-              │                │             o
-              │  GND     ●─────┼─────────────┘
-              │                │
-              │                │      TCRT5000-Modul (Wasser)
-              │  3V3     ●─────┼───────── VCC
-              │  GND     ●─────┼───────── GND
-              │  GPIO34  ●─────┼───────── A0
-              │                │          D0   (frei)
-              │                │
-              │  GPIO35  ●     │      reserviert für einen zweiten
-              │                │      TCRT5000 am Allmess-Zähler
-              │                │
-              │  USB     ●═════╪═════ 5-V/1-A-Netzteil
-              └────────────────┘
-```
+![Verdrahtungsplan](docs/verdrahtung.svg)
 
 - Der Reedkontakt hat keine Polarität. GPIO27 nutzt den internen Pull-up: offen liest der Pin HIGH, geschlossen LOW. Einen externen Widerstand braucht es nicht.
 - Vom TCRT5000 wird nur der analoge Ausgang A0 gebraucht. Das Poti auf dem Modul wirkt nur auf D0 und ist deshalb egal.
 - Das DevKit hat mehrere GND-Pins, beide Sensoren können also je einen eigenen nehmen. Alles lässt sich mit Dupont-Kabeln oder Wago-Klemmen stecken, ohne zu löten.
+- Die Kabelfarben sind ein Vorschlag: Rot für VCC, Schwarz für GND, Gelb für das Signal.
+- Strom bekommt das Board über USB von einem 5-V/1-A-Netzteil.
+
+Der Plan steht in `docs/verdrahtung.yaml` und wird mit [WireViz](https://github.com/wireviz/WireViz) gezeichnet. Nach einer Änderung das Bild so neu erzeugen:
+
+```bash
+podman build -t localhost/wireviz:0.4.1 -f docs/wireviz.Containerfile docs
+podman run --rm --userns=keep-id -v "$PWD/docs":/data:Z localhost/wireviz:0.4.1 -f s verdrahtung.yaml
+```
 
 ## Einrichtung
 

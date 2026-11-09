@@ -1,0 +1,45 @@
+# Verdrahtungsplan der Zählerecke für WireViz (https://github.com/wireviz/WireViz).
+# Bilder neu erzeugen, siehe README, Abschnitt "Verdrahtung".
+
+connectors:
+  ESP32:
+    type: ESP32-DevKit
+    subtype: ESP32-WROOM-32
+    pinlabels: [GPIO27, GND, 3V3, GND, GPIO34, GPIO35]
+    notes: "GPIO27 mit internem Pull-up.<br/>\
+      GPIO35 ist für einen zweiten TCRT5000<br/>\
+      am Allmess-Zähler reserviert.<br/>\
+      Die Nummern 1 bis 6 sind nur durchgezählt,<br/>\
+      nicht die Lage der Pins auf dem Board."
+
+  Reed:
+    type: Reedkontakt
+    subtype: Meder MK04-1A66B-500W
+    pinlabels: [Ader 1, Ader 2]
+    notes: Schließer, ohne Polarität
+
+  TCRT:
+    type: TCRT5000-Modul
+    subtype: Stiftleiste
+    pinlabels: [VCC, GND, D0, A0]
+    notes: D0 bleibt frei, das Poti wirkt nur darauf.
+
+cables:
+  W_Gas:
+    category: bundle
+    type: Anschlusskabel des Reedkontakts
+    length: 0.5
+    wirecount: 2
+
+  W_Wasser:
+    category: bundle
+    type: Dupont-Kabel
+    colors: [RD, BK, YE]
+
+connections:
+  - - ESP32: [1, 2]
+    - W_Gas: [1, 2]
+    - Reed: [1, 2]
+  - - ESP32: [3, 4, 5]
+    - W_Wasser: [1, 2, 3]
+    - TCRT: [1, 2, 4]
