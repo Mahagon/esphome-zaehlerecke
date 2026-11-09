@@ -1,3 +1,6 @@
 # ESPHome
 secrets.yaml
 .esphome/
+
+# WireViz-Container legt hier seinen Font-Cache ab
+docs/.cache/
