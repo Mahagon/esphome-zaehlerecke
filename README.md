@@ -33,10 +33,11 @@ cp secrets.yaml.example secrets.yaml
 openssl rand -base64 32   # Ergebnis bei api_key_zaehlerecke eintragen
 ```
 
-Beim ersten Mal wird per USB geflasht. Dafür muss der eigene Benutzer in der Gruppe `dialout` sein:
+Beim ersten Mal wird per USB geflasht. Dafür muss der eigene Benutzer in der Gruppe `dialout` sein. Auf Systemen mit SELinux (z. B. Fedora) darf ein Container die serielle Schnittstelle außerdem nur mit `--security-opt label=disable` öffnen. Sonst meldet ESPHome fehlende Rechte, obwohl die Gruppe stimmt:
 
 ```bash
 podman run --rm -it -v "$PWD":/config:Z --device /dev/ttyUSB0 --group-add keep-groups \
+  --security-opt label=disable \
   ghcr.io/esphome/esphome:2026.10.2 run zaehlerecke.yaml --device /dev/ttyUSB0
 ```
 
