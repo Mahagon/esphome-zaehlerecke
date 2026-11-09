@@ -1,3 +1,4 @@
+---
 # Zählerecke: liest den Gaszähler über einen Reedkontakt und den
 # Hauptwasserzähler über einen TCRT5000 aus.
 # Board: ESP32-DevKit (ESP32-WROOM-32)
