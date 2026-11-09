@@ -46,9 +46,10 @@ api:
   encryption:
     key: !secret api_key_zaehlerecke
 
+# Updates über WLAN werden mit dem API-Schlüssel verschlüsselt.
 ota:
   - platform: esphome
-    password: !secret ota_password
+    encryption:
 
 wifi:
   ssid: !secret wifi_ssid
