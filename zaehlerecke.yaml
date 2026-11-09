@@ -86,9 +86,13 @@ binary_sensor:
         pullup: true
       inverted: true
     filters:
-      # Reedkontakte prellen. Bei höchstens 6 m³/h kommt frühestens alle 6 s
-      # ein Impuls, 100 ms Entprellzeit fallen also nicht ins Gewicht.
-      - delayed_on_off: 100ms
+      # Reedkontakte prellen, und am Rand des Magnetfelds schließen sie bei
+      # einem Durchgang manchmal zweimal (zwei Pole). delayed_on filtert das
+      # Prellen. delayed_off fasst zwei Schließungen innerhalb von 2 s zu
+      # einem Impuls zusammen. Bei höchstens 6 m³/h kommt frühestens alle
+      # 6 s ein echter Impuls, es geht also keiner verloren.
+      - delayed_on: 100ms
+      - delayed_off: 2s
     on_press:
       then:
         - lambda: id(gas_count) += 1;
