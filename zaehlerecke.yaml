@@ -18,8 +18,14 @@ substitutions:
   # Auf dem Typenschild des Apator Metrix G4 steht "1 imp = 0,01 m³".
   gas_m3_per_pulse: "0.01"
 
+  # Nach so vielen ms ohne Gas-Impuls gilt der Durchfluss als 0 (10 min).
+  gas_flow_timeout_ms: "600000"
+
   # Heitland: Eine Umdrehung des x0,0001-Zeigers sind 0,001 m³, also 1 Liter.
   water_main_liter_per_pulse: "1"
+
+  # Nach so vielen ms ohne Wasser-Impuls gilt der Durchfluss als 0 (10 min).
+  water_flow_timeout_ms: "600000"
 
   # Schaltschwellen des TCRT5000 in Volt, mit Hysterese. Bis zur Kalibrierung
   # sind das Platzhalter (siehe README). Danach gilt:
@@ -72,6 +78,21 @@ globals:
     type: uint32_t
     restore_value: true
     initial_value: "0"
+  # Für den Gasdurchfluss: Zeitpunkt des letzten Impulses und Abstand zum
+  # vorletzten, beide in ms seit dem Start (millis). 0 heißt "noch unbekannt".
+  - id: gas_last_pulse_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: gas_last_interval_ms
+    type: uint32_t
+    initial_value: "0"
+  # Dasselbe für den Wasserdurchfluss.
+  - id: water_last_pulse_ms
+    type: uint32_t
+    initial_value: "0"
+  - id: water_last_interval_ms
+    type: uint32_t
+    initial_value: "0"
 
 binary_sensor:
   # Gas: Der Reedkontakt schließt, sobald der Magnet in der letzten Rolle vorbeidreht.
@@ -95,8 +116,18 @@ binary_sensor:
       - delayed_off: 2s
     on_press:
       then:
-        - lambda: id(gas_count) += 1;
+        - lambda: |-
+            id(gas_count) += 1;
+            // Abstand zum vorigen Impuls merken. Nach mehr als 10 min Pause
+            // sagt der Abstand nichts über den aktuellen Durchfluss, dann
+            // wartet der Durchfluss-Sensor auf den nächsten Impuls.
+            const uint32_t now = millis();
+            const uint32_t gap = now - id(gas_last_pulse_ms);
+            id(gas_last_interval_ms) =
+                (id(gas_last_pulse_ms) != 0 && gap <= ${gas_flow_timeout_ms}) ? gap : 0;
+            id(gas_last_pulse_ms) = now;
         - component.update: gas_total
+        - component.update: gas_flow
 
   # Wasser: Wenn der Zeiger unter dem TCRT5000 durchläuft, kippt die Spannung
   # über bzw. unter die Schwelle. Welche Richtung, spielt keine Rolle, weil das
@@ -111,8 +142,16 @@ binary_sensor:
       lower: ${water_main_threshold_lower}
     on_press:
       then:
-        - lambda: id(water_main_count) += ${water_main_liter_per_pulse};
+        - lambda: |-
+            id(water_main_count) += ${water_main_liter_per_pulse};
+            // Wie beim Gas: Abstand zum vorigen Impuls für den Durchfluss.
+            const uint32_t now = millis();
+            const uint32_t gap = now - id(water_last_pulse_ms);
+            id(water_last_interval_ms) =
+                (id(water_last_pulse_ms) != 0 && gap <= ${water_flow_timeout_ms}) ? gap : 0;
+            id(water_last_pulse_ms) = now;
         - component.update: water_main_total
+        - component.update: water_flow
 
 sensor:
   - platform: template
@@ -125,6 +164,27 @@ sensor:
     update_interval: 60s
     lambda: return id(gas_count) * ${gas_m3_per_pulse};
 
+  # Gasdurchfluss aus dem Abstand der letzten beiden Impulse, z. B. für das
+  # Feld "Gasdurchfluss" im Energie-Dashboard. Kommt länger kein Impuls, kann
+  # der Durchfluss höchstens 1 Impuls pro vergangener Zeit sein. Der Wert sinkt
+  # dann stetig und fällt nach 10 min ohne Impuls auf 0 (kleinster messbarer
+  # Wert: 0,01 m³ / 10 min = 0,06 m³/h).
+  - platform: template
+    id: gas_flow
+    name: "Gas Durchfluss"
+    unit_of_measurement: "m³/h"
+    device_class: volume_flow_rate
+    state_class: measurement
+    accuracy_decimals: 2
+    update_interval: 30s
+    lambda: |-
+      const uint32_t interval = id(gas_last_interval_ms);
+      if (interval == 0) return 0.0f;
+      const uint32_t since = millis() - id(gas_last_pulse_ms);
+      if (since > ${gas_flow_timeout_ms}) return 0.0f;
+      const uint32_t effective = since > interval ? since : interval;
+      return ${gas_m3_per_pulse} * 3600000.0f / effective;
+
   - platform: template
     id: water_main_total
     name: "Wasser Zählerstand"
@@ -134,6 +194,25 @@ sensor:
     accuracy_decimals: 3
     update_interval: 60s
     lambda: return id(water_main_count) / 1000.0;
+
+  # Wasserdurchfluss nach demselben Prinzip wie beim Gas. Kleinster messbarer
+  # Wert: 1 L / 10 min = 0,1 L/min. Bei voller Last (Q3 = 4 m³/h, etwa
+  # 67 L/min) kommt knapp jede Sekunde ein Impuls.
+  - platform: template
+    id: water_flow
+    name: "Wasser Durchfluss"
+    unit_of_measurement: "L/min"
+    device_class: volume_flow_rate
+    state_class: measurement
+    accuracy_decimals: 1
+    update_interval: 30s
+    lambda: |-
+      const uint32_t interval = id(water_last_interval_ms);
+      if (interval == 0) return 0.0f;
+      const uint32_t since = millis() - id(water_last_pulse_ms);
+      if (since > ${water_flow_timeout_ms}) return 0.0f;
+      const uint32_t effective = since > interval ? since : interval;
+      return ${water_main_liter_per_pulse} * 60000.0f / effective;
 
   # Rohwert vom A0-Ausgang des TCRT5000. Er bleibt intern, weil 50 Werte pro
   # Sekunde für Home Assistant zu viel wären.
