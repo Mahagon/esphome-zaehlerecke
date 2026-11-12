@@ -23,7 +23,7 @@ connectors:
     type: TCRT5000-Modul
     subtype: Stiftleiste
     pinlabels: [VCC, GND, D0, A0]
-    notes: D0 bleibt frei, das Poti wirkt nur darauf.
+    notes: D0 bleibt frei, nur A0 wird genutzt.
 
 cables:
   W_Gas:

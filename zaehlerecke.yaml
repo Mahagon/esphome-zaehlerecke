@@ -1,6 +1,6 @@
 ---
 # Zählerecke: liest den Gaszähler über einen Reedkontakt und den
-# Hauptwasserzähler über einen TCRT5000 aus.
+# Hauptwasserzähler über einen TCRT5000 am Sternrad aus.
 # Board: ESP32-DevKit (ESP32-WROOM-32)
 #
 # Verdrahtung:
@@ -21,17 +21,21 @@ substitutions:
   # Nach so vielen ms ohne Gas-Impuls gilt der Durchfluss als 0 (10 min).
   gas_flow_timeout_ms: "600000"
 
-  # Heitland: Eine Umdrehung des x0,0001-Zeigers sind 0,001 m³, also 1 Liter.
-  water_main_liter_per_pulse: "1"
+  # Heitland: Der TCRT5000 sieht die Zacken des schwarzen Sternrads (6 pro
+  # Umdrehung). Wie viel Wasser ein Zacken ist, steht nicht auf dem Zähler.
+  # Gemessen am 2026-11-12 gegen die Zeiger: 8,5 L ergaben 220 Impulse, also
+  # etwa 38,6 mL pro Impuls (±4 %, Ablesefehler und Impulse beim Auf- und
+  # Absetzen der Haube). Nach einigen Tagen gegen den Zählerstand nachjustieren:
+  #   neu = alt × (Verbrauch am Zähler / Verbrauch in Home Assistant)
+  # Angabe in Mikrolitern, damit keine Nachkommastellen verloren gehen.
+  water_main_ul_per_pulse: "38600"
 
-  # Nach so vielen ms ohne Wasser-Impuls gilt der Durchfluss als 0 (10 min).
-  water_flow_timeout_ms: "600000"
-
-  # Schaltschwellen des TCRT5000 in Volt, mit Hysterese. Bis zur Kalibrierung
-  # sind das Platzhalter (siehe README). Danach gilt:
-  #   upper = Min + 60 % der Spanne, lower = Min + 40 % der Spanne
-  water_main_threshold_upper: "1.60"
-  water_main_threshold_lower: "1.40"
+  # Schaltschwellen für A0 in Volt. Gemessen am 2026-11-12 bei laufendem
+  # Wasser (langsam und voll): Min 1,52 V, Max 1,60 V, Rauschen in Ruhe
+  # 0,016 V. Bei so kleinem Hub braucht die Hysterese mehr Abstand als üblich:
+  #   upper = Min + 70 % der Spanne, lower = Min + 30 % der Spanne
+  water_main_threshold_upper: "1.575"
+  water_main_threshold_lower: "1.545"
 
 esphome:
   name: ${name}
@@ -44,9 +48,11 @@ esp32:
 
 logger:
   logs:
-    # Der Wasser-ADC misst 50-mal pro Sekunde. Auf DEBUG wäre das Log nicht mehr lesbar.
+    # Der Wasser-ADC misst 200-mal pro Sekunde. Auf DEBUG wäre das Log nicht
+    # mehr lesbar.
     sensor: INFO
     adc: INFO
+    binary_sensor: INFO
 
 api:
   encryption:
@@ -74,9 +80,15 @@ globals:
     type: uint32_t
     restore_value: true
     initial_value: "0"
-  - id: water_main_count # zählt Impulse zu je 1 Liter
-    type: uint32_t
+  # Wasser in Mikrolitern, weil ein Zacken des Sternrads keine glatte Zahl
+  # von Millilitern ist. uint64_t reicht praktisch unbegrenzt.
+  - id: water_main_ul
+    type: uint64_t
     restore_value: true
+    initial_value: "0"
+  # Wasser-Impulse seit der letzten Durchfluss-Berechnung
+  - id: water_window_pulses
+    type: uint32_t
     initial_value: "0"
   # Für den Gasdurchfluss: Zeitpunkt des letzten Impulses und Abstand zum
   # vorletzten, beide in ms seit dem Start (millis). 0 heißt "noch unbekannt".
@@ -84,13 +96,6 @@ globals:
     type: uint32_t
     initial_value: "0"
   - id: gas_last_interval_ms
-    type: uint32_t
-    initial_value: "0"
-  # Dasselbe für den Wasserdurchfluss.
-  - id: water_last_pulse_ms
-    type: uint32_t
-    initial_value: "0"
-  - id: water_last_interval_ms
     type: uint32_t
     initial_value: "0"
 
@@ -129,13 +134,16 @@ binary_sensor:
         - component.update: gas_total
         - component.update: gas_flow
 
-  # Wasser: Wenn der Zeiger unter dem TCRT5000 durchläuft, kippt die Spannung
-  # über bzw. unter die Schwelle. Welche Richtung, spielt keine Rolle, weil das
-  # pro Umdrehung genau einmal passiert.
+  # Wasser: Jeder Zacken des Sternrads, der unter dem TCRT5000 durchläuft,
+  # kippt die Spannung an A0 über die obere bzw. unter die untere Schwelle.
+  # Die Hysterese dazwischen verhindert, dass ein langsam drehendes Sternrad
+  # mehrfach zählt. Der Komparator des Moduls (D0) hat keine Hysterese und hat
+  # bei wenig Durchfluss genau so geflattert.
   - platform: analog_threshold
     id: water_main_pulse
     name: "Wasser Impuls"
-    entity_category: diagnostic
+    # Schaltet bei voller Last viele Male pro Sekunde
+    internal: true
     sensor_id: water_main_adc
     threshold:
       upper: ${water_main_threshold_upper}
@@ -143,15 +151,8 @@ binary_sensor:
     on_press:
       then:
         - lambda: |-
-            id(water_main_count) += ${water_main_liter_per_pulse};
-            // Wie beim Gas: Abstand zum vorigen Impuls für den Durchfluss.
-            const uint32_t now = millis();
-            const uint32_t gap = now - id(water_last_pulse_ms);
-            id(water_last_interval_ms) =
-                (id(water_last_pulse_ms) != 0 && gap <= ${water_flow_timeout_ms}) ? gap : 0;
-            id(water_last_pulse_ms) = now;
-        - component.update: water_main_total
-        - component.update: water_flow
+            id(water_main_ul) += ${water_main_ul_per_pulse};
+            id(water_window_pulses) += 1;
 
 sensor:
   - platform: template
@@ -193,11 +194,9 @@ sensor:
     state_class: total_increasing
     accuracy_decimals: 3
     update_interval: 60s
-    lambda: return id(water_main_count) / 1000.0;
+    lambda: return id(water_main_ul) / 1e9;
 
-  # Wasserdurchfluss nach demselben Prinzip wie beim Gas. Kleinster messbarer
-  # Wert: 1 L / 10 min = 0,1 L/min. Bei voller Last (Q3 = 4 m³/h, etwa
-  # 67 L/min) kommt knapp jede Sekunde ein Impuls.
+  # Wasserdurchfluss aus den Impulsen der letzten 10 s
   - platform: template
     id: water_flow
     name: "Wasser Durchfluss"
@@ -205,44 +204,48 @@ sensor:
     device_class: volume_flow_rate
     state_class: measurement
     accuracy_decimals: 1
-    update_interval: 30s
+    update_interval: 10s
     lambda: |-
-      const uint32_t interval = id(water_last_interval_ms);
-      if (interval == 0) return 0.0f;
-      const uint32_t since = millis() - id(water_last_pulse_ms);
-      if (since > ${water_flow_timeout_ms}) return 0.0f;
-      const uint32_t effective = since > interval ? since : interval;
-      return ${water_main_liter_per_pulse} * 60000.0f / effective;
+      const uint32_t n = id(water_window_pulses);
+      id(water_window_pulses) = 0;
+      // n Impulse in 10 s, hochgerechnet auf eine Minute
+      return n * 6 * ${water_main_ul_per_pulse} / 1e6f;
 
-  # Rohwert vom A0-Ausgang des TCRT5000. Er bleibt intern, weil 50 Werte pro
-  # Sekunde für Home Assistant zu viel wären.
+  # A0 des TCRT5000. Am roten Zeiger sieht er nichts (Rot reflektiert Infrarot
+  # wie das weiße Zifferblatt), deshalb schaut er auf das schwarze Sternrad.
+  # Dort schwankt A0 nur um etwa 0,1 V. Damit das Rauschen des ESP32-ADC nicht
+  # stört, mittelt jede Messung 8 Einzelwerte. Alle 5 ms gemessen, damit auch
+  # bei vollem Durchfluss jeder Zacken mehrere Messpunkte bekommt. Bleibt
+  # intern, 200 Werte pro Sekunde wären zu viel für Home Assistant.
   - platform: adc
     id: water_main_adc
     pin: GPIO34
     attenuation: 12db
-    update_interval: 20ms
+    samples: 8
+    update_interval: 5ms
     internal: true
 
-  # Hilfe beim Kalibrieren: kleinster und größter Rohwert der letzten 5 s.
-  # Wenn Wasser läuft, sollten die beiden mindestens etwa 0,3 V auseinanderliegen.
+  # Hilfe beim Kalibrieren: kleinster und größter Wert der letzten 2 s.
+  # Wenn Wasser läuft, sollten sie deutlich weiter auseinanderliegen als bei
+  # stehendem Wasser.
   - platform: copy
     source_id: water_main_adc
-    name: "Wasser Sensor Min (5s)"
+    name: "Wasser Sensor Min (2s)"
     entity_category: diagnostic
-    accuracy_decimals: 2
+    accuracy_decimals: 3
     filters:
       - min:
-          window_size: 250
-          send_every: 250
+          window_size: 400
+          send_every: 400
   - platform: copy
     source_id: water_main_adc
-    name: "Wasser Sensor Max (5s)"
+    name: "Wasser Sensor Max (2s)"
     entity_category: diagnostic
-    accuracy_decimals: 2
+    accuracy_decimals: 3
     filters:
       - max:
-          window_size: 250
-          send_every: 250
+          window_size: 400
+          send_every: 400
 
   - platform: wifi_signal
     name: "WLAN Signal"
@@ -278,9 +281,9 @@ number:
     max_value: 99999
     step: 0.001
     unit_of_measurement: "m³"
-    lambda: return id(water_main_count) / 1000.0;
+    lambda: return id(water_main_ul) / 1e9;
     set_action:
-      - lambda: id(water_main_count) = (uint32_t) lround(x * 1000.0);
+      - lambda: id(water_main_ul) = (uint64_t) llround(x * 1e9);
       - component.update: water_main_total
 
 button:

@@ -170,33 +170,33 @@
 <!-- TCRT -->
 <g id="node3" class="node">
 <title>TCRT</title>
-<polygon fill="#ffffff" stroke="black" points="1232,-221 949,-221 949,-60 1232,-60 1232,-221"/>
-<polygon fill="none" stroke="black" points="949.5,-197.5 949.5,-220.5 1232.5,-220.5 1232.5,-197.5 949.5,-197.5"/>
+<polygon fill="#ffffff" stroke="black" points="1216,-221 965,-221 965,-60 1216,-60 1216,-221"/>
+<polygon fill="none" stroke="black" points="965.5,-197.5 965.5,-220.5 1216.5,-220.5 1216.5,-197.5 965.5,-197.5"/>
 <text text-anchor="start" x="1073.5" y="-205.3" font-family="arial" font-size="14.00">TCRT</text>
-<polygon fill="none" stroke="black" points="949.5,-174.5 949.5,-197.5 1088.5,-197.5 1088.5,-174.5 949.5,-174.5"/>
-<text text-anchor="start" x="960" y="-182.3" font-family="arial" font-size="14.00">TCRT5000&#45;Modul</text>
-<polygon fill="none" stroke="black" points="1088.5,-174.5 1088.5,-197.5 1174.5,-197.5 1174.5,-174.5 1088.5,-174.5"/>
-<text text-anchor="start" x="1099" y="-182.3" font-family="arial" font-size="14.00">Stiftleiste</text>
-<polygon fill="none" stroke="black" points="1174.5,-174.5 1174.5,-197.5 1232.5,-197.5 1232.5,-174.5 1174.5,-174.5"/>
-<text text-anchor="start" x="1185" y="-182.3" font-family="arial" font-size="14.00">4&#45;pin</text>
-<polygon fill="none" stroke="black" points="949.5,-151.5 949.5,-174.5 1080.5,-174.5 1080.5,-151.5 949.5,-151.5"/>
-<text text-anchor="start" x="1010" y="-159.3" font-family="arial" font-size="14.00">1</text>
-<polygon fill="none" stroke="black" points="1080.5,-151.5 1080.5,-174.5 1232.5,-174.5 1232.5,-151.5 1080.5,-151.5"/>
-<text text-anchor="start" x="1141.5" y="-159.3" font-family="arial" font-size="14.00">VCC</text>
-<polygon fill="none" stroke="black" points="949.5,-128.5 949.5,-151.5 1080.5,-151.5 1080.5,-128.5 949.5,-128.5"/>
-<text text-anchor="start" x="1010" y="-136.3" font-family="arial" font-size="14.00">2</text>
-<polygon fill="none" stroke="black" points="1080.5,-128.5 1080.5,-151.5 1232.5,-151.5 1232.5,-128.5 1080.5,-128.5"/>
-<text text-anchor="start" x="1140.5" y="-136.3" font-family="arial" font-size="14.00">GND</text>
-<polygon fill="none" stroke="black" points="949.5,-105.5 949.5,-128.5 1080.5,-128.5 1080.5,-105.5 949.5,-105.5"/>
-<text text-anchor="start" x="1010" y="-113.3" font-family="arial" font-size="14.00">3</text>
-<polygon fill="none" stroke="black" points="1080.5,-105.5 1080.5,-128.5 1232.5,-128.5 1232.5,-105.5 1080.5,-105.5"/>
-<text text-anchor="start" x="1146.5" y="-113.3" font-family="arial" font-size="14.00">D0</text>
-<polygon fill="none" stroke="black" points="949.5,-82.5 949.5,-105.5 1080.5,-105.5 1080.5,-82.5 949.5,-82.5"/>
-<text text-anchor="start" x="1010" y="-90.3" font-family="arial" font-size="14.00">4</text>
-<polygon fill="none" stroke="black" points="1080.5,-82.5 1080.5,-105.5 1232.5,-105.5 1232.5,-82.5 1080.5,-82.5"/>
-<text text-anchor="start" x="1147" y="-90.3" font-family="arial" font-size="14.00">A0</text>
-<polygon fill="none" stroke="black" points="949.5,-59.5 949.5,-82.5 1232.5,-82.5 1232.5,-59.5 949.5,-59.5"/>
-<text text-anchor="start" x="953.5" y="-67.3" font-family="arial" font-size="14.00">D0 bleibt frei, das Poti wirkt nur darauf.</text>
+<polygon fill="none" stroke="black" points="965.5,-174.5 965.5,-197.5 1094.5,-197.5 1094.5,-174.5 965.5,-174.5"/>
+<text text-anchor="start" x="971" y="-182.3" font-family="arial" font-size="14.00">TCRT5000&#45;Modul</text>
+<polygon fill="none" stroke="black" points="1094.5,-174.5 1094.5,-197.5 1169.5,-197.5 1169.5,-174.5 1094.5,-174.5"/>
+<text text-anchor="start" x="1099.5" y="-182.3" font-family="arial" font-size="14.00">Stiftleiste</text>
+<polygon fill="none" stroke="black" points="1169.5,-174.5 1169.5,-197.5 1216.5,-197.5 1216.5,-174.5 1169.5,-174.5"/>
+<text text-anchor="start" x="1174.5" y="-182.3" font-family="arial" font-size="14.00">4&#45;pin</text>
+<polygon fill="none" stroke="black" points="965.5,-151.5 965.5,-174.5 1080.5,-174.5 1080.5,-151.5 965.5,-151.5"/>
+<text text-anchor="start" x="1018" y="-159.3" font-family="arial" font-size="14.00">1</text>
+<polygon fill="none" stroke="black" points="1080.5,-151.5 1080.5,-174.5 1216.5,-174.5 1216.5,-151.5 1080.5,-151.5"/>
+<text text-anchor="start" x="1133.5" y="-159.3" font-family="arial" font-size="14.00">VCC</text>
+<polygon fill="none" stroke="black" points="965.5,-128.5 965.5,-151.5 1080.5,-151.5 1080.5,-128.5 965.5,-128.5"/>
+<text text-anchor="start" x="1018" y="-136.3" font-family="arial" font-size="14.00">2</text>
+<polygon fill="none" stroke="black" points="1080.5,-128.5 1080.5,-151.5 1216.5,-151.5 1216.5,-128.5 1080.5,-128.5"/>
+<text text-anchor="start" x="1132.5" y="-136.3" font-family="arial" font-size="14.00">GND</text>
+<polygon fill="none" stroke="black" points="965.5,-105.5 965.5,-128.5 1080.5,-128.5 1080.5,-105.5 965.5,-105.5"/>
+<text text-anchor="start" x="1018" y="-113.3" font-family="arial" font-size="14.00">3</text>
+<polygon fill="none" stroke="black" points="1080.5,-105.5 1080.5,-128.5 1216.5,-128.5 1216.5,-105.5 1080.5,-105.5"/>
+<text text-anchor="start" x="1138.5" y="-113.3" font-family="arial" font-size="14.00">D0</text>
+<polygon fill="none" stroke="black" points="965.5,-82.5 965.5,-105.5 1080.5,-105.5 1080.5,-82.5 965.5,-82.5"/>
+<text text-anchor="start" x="1018" y="-90.3" font-family="arial" font-size="14.00">4</text>
+<polygon fill="none" stroke="black" points="1080.5,-82.5 1080.5,-105.5 1216.5,-105.5 1216.5,-82.5 1080.5,-82.5"/>
+<text text-anchor="start" x="1139" y="-90.3" font-family="arial" font-size="14.00">A0</text>
+<polygon fill="none" stroke="black" points="965.5,-59.5 965.5,-82.5 1216.5,-82.5 1216.5,-59.5 965.5,-59.5"/>
+<text text-anchor="start" x="969.5" y="-67.3" font-family="arial" font-size="14.00">D0 bleibt frei, nur A0 wird genutzt.</text>
 </g>
 <!-- W_Gas&#45;&#45;Reed -->
 <g id="edge2" class="edge">
@@ -215,23 +215,23 @@
 <!-- W_Wasser&#45;&#45;TCRT -->
 <g id="edge6" class="edge">
 <title>W_Wasser:e&#45;&#45;TCRT:w</title>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-161.5C842.67,-161.5 863.83,-161.5 948.5,-161.5"/>
-<path fill="none" stroke="#ff0000" stroke-width="2" d="M758,-163.5C842.67,-163.5 863.83,-163.5 948.5,-163.5"/>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-165.5C842.67,-165.5 863.83,-165.5 948.5,-165.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-161.5C849.78,-161.5 872.72,-161.5 964.5,-161.5"/>
+<path fill="none" stroke="#ff0000" stroke-width="2" d="M758,-163.5C849.78,-163.5 872.72,-163.5 964.5,-163.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-165.5C849.78,-165.5 872.72,-165.5 964.5,-165.5"/>
 </g>
 <!-- W_Wasser&#45;&#45;TCRT -->
 <g id="edge8" class="edge">
 <title>W_Wasser:e&#45;&#45;TCRT:w</title>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-136.5C842.76,-136.5 863.93,-137.5 948.5,-137.5"/>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-138.5C842.67,-138.5 863.83,-139.5 948.5,-139.5"/>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-140.5C842.57,-140.5 863.74,-141.5 948.5,-141.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-136.5C849.87,-136.5 872.81,-137.5 964.5,-137.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-138.5C849.78,-138.5 872.72,-139.5 964.5,-139.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-140.5C849.69,-140.5 872.63,-141.5 964.5,-141.5"/>
 </g>
 <!-- W_Wasser&#45;&#45;TCRT -->
 <g id="edge10" class="edge">
 <title>W_Wasser:e&#45;&#45;TCRT:w</title>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-111.5C841.73,-112.08 861.96,-92.08 948.5,-91.5"/>
-<path fill="none" stroke="#ffff00" stroke-width="2" d="M758,-113.5C843.13,-113.5 863.37,-93.5 948.5,-93.5"/>
-<path fill="none" stroke="#000000" stroke-width="2" d="M758,-115.5C844.54,-114.92 864.77,-94.92 948.5,-95.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-111.5C848.86,-112.02 870.95,-92.02 964.5,-91.5"/>
+<path fill="none" stroke="#ffff00" stroke-width="2" d="M758,-113.5C850.21,-113.5 872.29,-93.5 964.5,-93.5"/>
+<path fill="none" stroke="#000000" stroke-width="2" d="M758,-115.5C851.55,-114.98 873.64,-94.98 964.5,-95.5"/>
 </g>
 </g>
 </svg>
