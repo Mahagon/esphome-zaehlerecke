@@ -6,11 +6,11 @@ connectors:
   ESP32:
     type: ESP32-DevKit
     subtype: ESP32-WROOM-32
-    pinlabels: [GPIO27, GND, 3V3, GND, GPIO34, GPIO35]
+    pinlabels: [GPIO27, GND, 3V3, GND, GPIO34]
     notes: "GPIO27 mit internem Pull-up.<br/>\
-      GPIO35 ist für einen zweiten TCRT5000<br/>\
+      GPIO33 ist für das Impulsmodul<br/>\
       am Allmess-Zähler reserviert.<br/>\
-      Die Nummern 1 bis 6 sind nur durchgezählt,<br/>\
+      Die Nummern 1 bis 5 sind nur durchgezählt,<br/>\
       nicht die Lage der Pins auf dem Board."
 
   Reed:

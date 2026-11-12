@@ -2,10 +2,10 @@
 
 Ein ESP32-DevKit liest den Gaszähler und den Hauptwasserzähler aus und schickt die Zählerstände an Home Assistant.
 
-| Zähler                          | Sensor                                       | Auflösung          |
-| ------------------------------- | -------------------------------------------- | ------------------ |
-| Gas, Apator Metrix G4           | Reedkontakt MK04 an der letzten Ziffernrolle | 1 Impuls = 0,01 m³ |
-| Wasser, Ernst Heitland (Q3 = 4) | TCRT5000 über dem schwarzen Sternrad         | ca. 38,6 mL pro Zacken (26 pro Liter) |
+| Zähler                          | Sensor                                       | Auflösung                     |
+| ------------------------------- | -------------------------------------------- | ----------------------------- |
+| Gas, Apator Metrix G4           | Reedkontakt MK04 an der letzten Ziffernrolle | 1 Impuls = 0,01 m³            |
+| Wasser, Ernst Heitland (Q3 = 4) | TCRT5000 über dem schwarzen Sternrad         | 1 Zacken ≈ 38,6 mL (26 pro L) |
 
 ## Verdrahtung
 
@@ -48,18 +48,35 @@ podman run --rm -it --network host -v "$PWD":/config:Z ghcr.io/esphome/esphome:2
 podman run --rm -it --network host -v "$PWD":/config:Z ghcr.io/esphome/esphome:2026.10.2 logs zaehlerecke.yaml --device <IP>
 ```
 
+## Druckteile
+
+Die Halter und das Gehäuse liegen als Python-Generatoren in `cad/`. Sie erzeugen SolidCraft-Skripte, aus denen `solidcraft-cli` die STL-Dateien und ein parametrisches Design (`.sc`) baut. Alle Teile neu bauen:
+
+```bash
+cad/build.sh
+```
+
+- `gas_halter`: Stopfen für den geöffneten Impulsgeber-Schacht des Gaszählers mit Tasche für den MK04. `gas_halter_test` ist nur der Kragen mit einem kurzen Stück Stopfen, um die Passung zu prüfen. Druck in PETG, weil PLA unter Klemmkraft nachgibt.
+- `esp_schale`, `esp_deckel`, `esp_wandhalter`: Gehäuse für das ESP32, die Schale wird von oben auf den Wandhalter geschoben. `esp_schale_45` ist die Schale um 45° gekippt mit eigenen Stützen, dafür in Cura die Stützen ausschalten. `esp_schwalbe_test` prüft die Passung der Schiene.
+- `wasser_haube_stern`: Haube für den TCRT5000 am Wasserzähler, Tellerseite auf dem Bett, schwarzes PLA+.
+
+Wer ein Teil in SolidCraft von Hand ändert, sollte die Änderung auch in den Generator übernehmen. `cad/build.sh` überschreibt sonst die `.sc` und `.stl`.
+
 ## Wasser kalibrieren
 
-Den roten Zeiger sieht der TCRT5000 nicht, weil Rot im Infrarot so hell ist wie das weiße Zifferblatt. Deshalb schaut er auf das schwarze Sternrad. Die Haube (`cad/wasser_haube_stern.stl`) hält den Sensor direkt auf dem Glas. Mit Luft dazwischen spiegelt das Glas zu viel Licht zurück.
+Den roten Zeiger sieht der TCRT5000 nicht, weil Rot im Infrarot so hell ist wie das weiße Zifferblatt. Deshalb schaut er auf das schwarze Sternrad. Die Haube hält den Sensor direkt auf dem Glas. Mit Luft dazwischen spiegelt das Glas zu viel Licht zurück. Die Haube so drehen, dass das Fenster etwa 3 mm neben der Mitte des Sternrads über den Zacken liegt, und die Stellung auf Haube und Ring markieren.
 
-1. Wasser laufen lassen und in Home Assistant „Wasser Sensor Min (2s)“ und „Wasser Sensor Max (2s)“ ablesen, einmal bei stehendem und einmal bei laufendem Wasser. Die Spanne bei laufendem Wasser muss deutlich größer sein als das Rauschen bei stehendem.
+1. In Home Assistant „Wasser Sensor Min (2s)“ und „Wasser Sensor Max (2s)“ ablesen, einmal bei stehendem und einmal bei laufendem Wasser. Bei laufendem Wasser müssen die beiden deutlich weiter auseinanderliegen als im Stillstand. Gemessen waren 0,08 V gegen 0,016 V Rauschen.
 2. Die Schwellen ausrechnen, in `zaehlerecke.yaml` eintragen und per OTA flashen:
    - `water_main_threshold_upper` = Min + 0,7 × (Max − Min)
    - `water_main_threshold_lower` = Min + 0,3 × (Max − Min)
 
-   Die Hysterese (Abstand zwischen den Schwellen) muss deutlich größer sein als das Rauschen in Ruhe.
-3. Haube abnehmen, die Zeiger fotografieren, Haube wieder aufsetzen, einige Liter laufen lassen, wieder fotografieren. Aus „Wasser Durchfluss“ (Impulse pro 10 s × 6 × Menge pro Impuls) oder dem Log die Impulse zählen. `water_main_ul_per_pulse` = gelaufene µL / Impulse. Gemessen: etwa 38 600 µL pro Impuls.
-4. Einmal mit wenig und einmal mit voll aufgedrehtem Hahn prüfen.
+   Der Abstand zwischen den Schwellen muss deutlich größer sein als das Rauschen im Stillstand. Sonst zählt ein Sternrad, das auf einer Kante stehen bleibt, immer wieder.
+3. Die Menge pro Zacken gegen den Zähler selbst bestimmen, nicht mit einem Messbecher: Haube abnehmen, die Zeiger fotografieren, Haube aufsetzen, einige Liter langsam und einige voll aufgedreht laufen lassen, Haube abnehmen, wieder fotografieren. Danach gilt:
+
+   `water_main_ul_per_pulse` neu = alt × (Verbrauch laut Zeigern / Verbrauch laut Home Assistant)
+
+   Dieselbe Rechnung passt auch zum Nachjustieren nach ein paar Tagen, mit dem Zählerstand statt der Zeiger. Gemessen sind bisher etwa 38 600 µL pro Impuls, auf etwa 4 % genau.
 
 ## Zählerstände
 

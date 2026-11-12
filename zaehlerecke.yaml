@@ -6,7 +6,7 @@
 # Verdrahtung:
 #   Reedkontakt MK04 (Gas)       GPIO27 und GND, wie herum ist egal
 #   TCRT5000 Wasser (Heitland)   VCC an 3V3, GND an GND, A0 an GPIO34, D0 bleibt frei
-#   TCRT5000 Allmess (später)    A0 an GPIO35
+#   Allmess-Gartenzähler (später) Impulsmodul PM +m an GPIO33 und GND (falls Kontaktausgang)
 #
 # Die Secrets stehen in secrets.yaml. Die Datei ist nicht im Git,
 # eine Vorlage liegt in secrets.yaml.example.
