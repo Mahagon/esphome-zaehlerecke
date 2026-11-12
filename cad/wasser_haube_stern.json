@@ -1,0 +1,687 @@
+[
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "ring_id",
+   "expression": "56.7 mm",
+   "comment": "Innendurchmesser des weißen Rings"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "ring_od",
+   "expression": "80 mm",
+   "comment": "Außendurchmesser des weißen Rings"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "ring_h",
+   "expression": "7.6 mm",
+   "comment": "Höhe des Rings über dem Glas"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "hinge_in",
+   "expression": "10 mm",
+   "comment": "So weit ragt das Deckelscharnier vom Außenrand nach innen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_l",
+   "expression": "31 mm",
+   "comment": "TCRT-Modul Länge"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_w",
+   "expression": "14.1 mm",
+   "comment": "TCRT-Modul Breite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_t",
+   "expression": "3 mm",
+   "comment": "TCRT-Modul Dicke"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sens_end",
+   "expression": "3.5 mm",
+   "comment": "Mitte Sensorblock ab pinlosem Board-Ende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sens_drop",
+   "expression": "8.5 mm",
+   "comment": "Boden der Vertiefung bis tiefster Punkt des Sensors"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tcrt_l",
+   "expression": "10.2 mm",
+   "comment": "TCRT5000 Gehäuse quer zum Board (Datenblatt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tcrt_w",
+   "expression": "5.8 mm",
+   "comment": "TCRT5000 Gehäuse längs zum Board (Datenblatt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "fit_clear",
+   "expression": "0.15 mm",
+   "comment": "Luft Rohr zu Ring je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "rib_r",
+   "expression": "0.4 mm",
+   "comment": "Klemmrippen außen am Rohr"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tube_gap",
+   "expression": "1 mm",
+   "comment": "Luft zwischen Rohrende und Glas"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "hinge_clear",
+   "expression": "1 mm",
+   "comment": "Luft zwischen Teller und Scharnier"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sens_gap",
+   "expression": "0 mm",
+   "comment": "Luft zwischen Sensor und Glas"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "recess_extra",
+   "expression": "1.3 mm",
+   "comment": "Vertiefung so viel tiefer als das Modul dick ist"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "grip_d",
+   "expression": "12 mm",
+   "comment": "Durchmesser der Griffmulden neben dem Modul"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_t",
+   "expression": "1.2 mm",
+   "comment": "Tellerdicke außerhalb des Blocks"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_side",
+   "expression": "2.75 mm",
+   "comment": "Wand des Blocks neben der Vertiefung"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_end",
+   "expression": "1.5 mm",
+   "comment": "Wand des Blocks hinter dem pinlosen Board-Ende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_len",
+   "expression": "50.4 mm",
+   "comment": "Länge des Blocks, zur Pin-Seite hin"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_clear",
+   "expression": "0.2 mm",
+   "comment": "Luft um die Platine je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tcrt_clear",
+   "expression": "0.4 mm",
+   "comment": "Luft um den Sensorblock quer zum Board je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "hold_clear",
+   "expression": "0.55 mm",
+   "comment": "Luft um den Sensorblock längs zum Board je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sens_adj",
+   "expression": "2 mm",
+   "comment": "Vertiefung so viel länger als das Modul zum Sensorende hin"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_rib_r",
+   "expression": "0.35 mm",
+   "comment": "Klemmrippen an den Längsseiten der Vertiefung"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tube_od",
+   "expression": "ring_id - 2 * fit_clear",
+   "comment": "Außendurchmesser des Rohrs"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_d",
+   "expression": "ring_od - 2 * hinge_in - 2 * hinge_clear",
+   "comment": "Tellerdurchmesser, bleibt innerhalb des Scharniers"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "recess",
+   "expression": "pcb_t + recess_extra",
+   "comment": "Tiefe der Vertiefung für die Platine"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "top_z",
+   "expression": "sens_gap + sens_drop + recess",
+   "comment": "Oberseite des Blocks über dem Glas"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "floor_z",
+   "expression": "top_z - recess",
+   "comment": "Boden der Vertiefung über dem Glas"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_top",
+   "expression": "ring_h + plate_t",
+   "comment": "Oberseite des Tellers außerhalb des Blocks"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_hw",
+   "expression": "pcb_w / 2 + pcb_clear",
+   "comment": "Halbe Breite der Vertiefung"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_hw",
+   "expression": "pcb_hw + blk_side",
+   "comment": "Halbe Breite des Blocks"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sens_r",
+   "expression": "10 mm",
+   "comment": "Abstand der Sternrad-Mitte von der Glasmitte"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_x1",
+   "expression": "sens_r + sens_end + sens_adj + pcb_clear",
+   "comment": "Ende der Vertiefung am Sensorende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_x1",
+   "expression": "pcb_x1 + blk_end",
+   "comment": "Ende des Blocks am Sensorende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "blk_x0",
+   "expression": "blk_x1 - blk_len",
+   "comment": "Ende des Blocks zur Pin-Seite"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap + 0.01 mm",
+   "base": [
+    0,
+    0,
+    "tube_gap"
+   ],
+   "axis": "Z",
+   "diameter": "tube_od",
+   "body_name": "Haube"
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "top_z - ring_h",
+   "base": [
+    0,
+    0,
+    "ring_h"
+   ],
+   "axis": "Z",
+   "diameter": "plate_d",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(0 * 60 deg)",
+    "tube_od / 2 * sin(0 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(1 * 60 deg)",
+    "tube_od / 2 * sin(1 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(2 * 60 deg)",
+    "tube_od / 2 * sin(2 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(3 * 60 deg)",
+    "tube_od / 2 * sin(3 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(4 * 60 deg)",
+    "tube_od / 2 * sin(4 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "ring_h - tube_gap - 0.5 mm",
+   "base": [
+    "tube_od / 2 * cos(5 * 60 deg)",
+    "tube_od / 2 * sin(5 * 60 deg)",
+    "tube_gap + 0.5 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "plate_d + 2 mm",
+   "width": "plate_d / 2 + 1 mm - blk_hw",
+   "height": "top_z - plate_top + 1 mm",
+   "corner": [
+    "-(plate_d / 2 + 1 mm)",
+    "blk_hw",
+    "plate_top"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "blk_x0 + plate_d / 2 + 1 mm",
+   "width": "blk_side",
+   "height": "top_z - plate_top + 1 mm",
+   "corner": [
+    "-(plate_d / 2 + 1 mm)",
+    "pcb_hw",
+    "plate_top"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "plate_d + 2 mm",
+   "width": "plate_d / 2 + 1 mm - blk_hw",
+   "height": "top_z - plate_top + 1 mm",
+   "corner": [
+    "-(plate_d / 2 + 1 mm)",
+    "-(plate_d / 2 + 1 mm)",
+    "plate_top"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "blk_x0 + plate_d / 2 + 1 mm",
+   "width": "blk_side",
+   "height": "top_z - plate_top + 1 mm",
+   "corner": [
+    "-(plate_d / 2 + 1 mm)",
+    "-blk_hw",
+    "plate_top"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "plate_d / 2 + 1 mm - blk_x1",
+   "width": "2 * blk_hw",
+   "height": "top_z - plate_top + 1 mm",
+   "corner": [
+    "blk_x1",
+    "-blk_hw",
+    "plate_top"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "pcb_x1 + plate_d / 2 + 1 mm",
+   "width": "2 * pcb_hw",
+   "height": "recess + 1 mm",
+   "corner": [
+    "-(plate_d / 2 + 1 mm)",
+    "-pcb_hw",
+    "floor_z"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess",
+   "base": [
+    "sens_r - 4 mm",
+    "-pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "radius": "pcb_rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess",
+   "base": [
+    "sens_r - 4 mm",
+    "pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "radius": "pcb_rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess",
+   "base": [
+    "sens_r - 22 mm",
+    "-pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "radius": "pcb_rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess",
+   "base": [
+    "sens_r - 22 mm",
+    "pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "radius": "pcb_rib_r",
+   "operation": "join",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess + 1 mm",
+   "base": [
+    "sens_r + sens_end - pcb_l / 2",
+    "-pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "diameter": "grip_d",
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "recess + 1 mm",
+   "base": [
+    "sens_r + sens_end - pcb_l / 2",
+    "pcb_hw",
+    "floor_z"
+   ],
+   "axis": "Z",
+   "diameter": "grip_d",
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "tcrt_w + 2 * hold_clear",
+   "width": "tcrt_l + 2 * tcrt_clear",
+   "height": "floor_z - tube_gap + 1.01 mm",
+   "corner": [
+    "sens_r - tcrt_w / 2 - hold_clear",
+    "-(tcrt_l / 2 + tcrt_clear)",
+    "tube_gap - 1 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Haube"
+   ]
+  }
+ },
+ {
+  "command": "solid.move",
+  "params": {
+   "bodies": [
+    "Haube"
+   ],
+   "axis": [
+    1,
+    0,
+    0
+   ],
+   "angle": "180 deg",
+   "translate": [
+    0,
+    0,
+    "top_z"
+   ]
+  }
+ }
+]
