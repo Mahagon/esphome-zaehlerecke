@@ -1,0 +1,443 @@
+[
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "inner_l",
+   "expression": "42.1 mm",
+   "comment": "Schachtöffnung innen, lange Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "inner_h",
+   "expression": "16.8 mm",
+   "comment": "Schachtöffnung innen, kurze Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "outer_l",
+   "expression": "46.5 mm",
+   "comment": "Schachtrand außen, lange Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "outer_h",
+   "expression": "21.0 mm",
+   "comment": "Schachtrand außen, kurze Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "floor_depth",
+   "expression": "12.9 mm",
+   "comment": "Tiefe des flachen Schachtbodens ab Außenkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pocket_depth",
+   "expression": "17.6 mm",
+   "comment": "Tiefe der großen Vertiefung ab Außenkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_l",
+   "expression": "23.0 mm",
+   "comment": "MK04 Länge (Lasche abgesägt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_w",
+   "expression": "7.4 mm",
+   "comment": "MK04 Breite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_t",
+   "expression": "5.6 mm",
+   "comment": "MK04 Höhe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "cable_w",
+   "expression": "3.0 mm",
+   "comment": "Flachkabel, zwei Adern je 1,5 mm"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_x",
+   "expression": "13.5 mm",
+   "comment": "Mitte MK04 ab linker Innenwand (Foto, geschätzt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_y",
+   "expression": "4.8 mm",
+   "comment": "Mitte MK04 ab oberer Innenwand (Foto, geschätzt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "clear",
+   "expression": "0.15 mm",
+   "comment": "Luft Stopfen zu Schachtwand je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "rib_r",
+   "expression": "0.4 mm",
+   "comment": "Radius der Klemmrippen (stehen so weit über)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "seat_gap",
+   "expression": "0.3 mm",
+   "comment": "Abstand Stirnseite zum flachen Boden, damit der Kragen anliegt"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_press",
+   "expression": "0.2 mm",
+   "comment": "Wie weit der Stopfen den MK04 auf den Boden drückt"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_clear",
+   "expression": "0.3 mm",
+   "comment": "Luft um den MK04 in der Tasche je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "cable_clear",
+   "expression": "0.4 mm",
+   "comment": "Zusatzbreite der Kabelnut"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "cable_d",
+   "expression": "2.0 mm",
+   "comment": "Tiefe der Kabelnut"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "flange_t",
+   "expression": "2.0 mm",
+   "comment": "Dicke des Kragens"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tab_l",
+   "expression": "7 mm",
+   "comment": "Grifflasche links am Kragen, steht so weit über"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tab_w",
+   "expression": "10 mm",
+   "comment": "Breite der Grifflasche"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "tab_hole_d",
+   "expression": "3.2 mm",
+   "comment": "Loch in der Grifflasche für Haken oder Schraubendreher"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pry_w",
+   "expression": "8 mm",
+   "comment": "Breite der Hebelschlitze"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pry_d",
+   "expression": "1.0 mm",
+   "comment": "Tiefe der Hebelschlitze im Kragen (Seite zum Zähler)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "body_d",
+   "expression": "floor_depth - seat_gap",
+   "comment": "Länge des Stopfens ab Kragen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "recess_d",
+   "expression": "body_d - (pocket_depth - reed_t) + reed_press",
+   "comment": "Tiefe der MK04-Tasche in der Stirnseite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "flange_ox",
+   "expression": "(outer_l - inner_l) / 2",
+   "comment": "Überstand Kragen links/rechts"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "flange_oy",
+   "expression": "(outer_h - inner_h) / 2",
+   "comment": "Überstand Kragen oben/unten"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "reed_cy",
+   "expression": "inner_h - reed_y",
+   "comment": "Y-Mitte des MK04"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "outer_l",
+   "width": "outer_h",
+   "height": "flange_t",
+   "corner": [
+    "-flange_ox",
+    "-flange_oy",
+    "-flange_t"
+   ],
+   "body_name": "Halter"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "inner_l - 2 * clear",
+   "width": "inner_h - 2 * clear",
+   "height": "4 mm",
+   "corner": [
+    "clear",
+    "clear",
+    "0 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "2 mm",
+   "base": [
+    "inner_l * 0.2",
+    "clear",
+    "1 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "2 mm",
+   "base": [
+    "inner_l * 0.2",
+    "inner_h - clear",
+    "1 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "2 mm",
+   "base": [
+    "inner_l * 0.8",
+    "clear",
+    "1 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "2 mm",
+   "base": [
+    "inner_l * 0.8",
+    "inner_h - clear",
+    "1 mm"
+   ],
+   "axis": "Z",
+   "radius": "rib_r",
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "cable_d + flange_ox + 5 mm",
+   "width": "cable_w + cable_clear",
+   "height": "4 mm + flange_t + 2 mm",
+   "corner": [
+    "inner_l - clear - cable_d",
+    "reed_cy - (cable_w + cable_clear) / 2",
+    "-flange_t - 1 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "tab_l + 0.01 mm",
+   "width": "tab_w",
+   "height": "flange_t",
+   "corner": [
+    "-flange_ox - tab_l",
+    "inner_h / 2 - tab_w / 2",
+    "-flange_t"
+   ],
+   "operation": "join",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.cylinder",
+  "params": {
+   "height": "flange_t + 2 mm",
+   "base": [
+    "-flange_ox - tab_l / 2",
+    "inner_h / 2",
+    "-flange_t - 1 mm"
+   ],
+   "axis": "Z",
+   "diameter": "tab_hole_d",
+   "operation": "cut",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "pry_w",
+   "width": "flange_oy + 2 mm",
+   "height": "pry_d + 1 mm",
+   "corner": [
+    "inner_l * 0.3 - pry_w / 2",
+    "-flange_oy - 1 mm",
+    "-pry_d"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "pry_w",
+   "width": "flange_oy + 2 mm",
+   "height": "pry_d + 1 mm",
+   "corner": [
+    "inner_l * 0.7 - pry_w / 2",
+    "-flange_oy - 1 mm",
+    "-pry_d"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Halter"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "3 mm",
+   "width": "2 mm",
+   "height": "flange_t + 2 mm",
+   "corner": [
+    "inner_l / 2 - 1.5 mm",
+    "inner_h + flange_oy - 1 mm",
+    "-flange_t - 1 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Halter"
+   ]
+  }
+ }
+]
