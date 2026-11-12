@@ -1,0 +1,1257 @@
+[
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "board_l",
+   "expression": "56 mm",
+   "comment": "Board Länge (AZ-Delivery: 56 x 28 x 13 mm)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "board_w",
+   "expression": "28 mm",
+   "comment": "Board Breite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "board_h",
+   "expression": "13 mm",
+   "comment": "Board Höhe gesamt mit Stiftleisten"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "dupont_l",
+   "expression": "14 mm",
+   "comment": "Länge der Dupont-Buchsenhülse"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wago_w",
+   "expression": "13.1 mm",
+   "comment": "WAGO 221-412 Breite (Datenblatt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wago_d",
+   "expression": "18.6 mm",
+   "comment": "WAGO 221-412 Tiefe (Datenblatt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pcb_t",
+   "expression": "1.6 mm",
+   "comment": "Platinendicke (Standard)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "top_h",
+   "expression": "3.5 mm",
+   "comment": "Höchstes Bauteil über der Platine (geschätzt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "header_base",
+   "expression": "2.5 mm",
+   "comment": "Kunststoffleiste der Stifte unter der Platine"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wire_bend",
+   "expression": "8 mm",
+   "comment": "Platz für den Kabelbogen hinter den Dupont-Hülsen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "module_h",
+   "expression": "3.1 mm",
+   "comment": "Höhe ESP32-WROOM-32 (Datenblatt)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "module_y",
+   "expression": "15.5 mm",
+   "comment": "Mitte Modul-Abschirmung ab Antennenende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wall",
+   "expression": "2.0 mm",
+   "comment": "Wandstärke"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "back_t",
+   "expression": "5.5 mm",
+   "comment": "Rückwand, trägt die Schwalbenschwanz-Nut"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "board_clear",
+   "expression": "0.3 mm",
+   "comment": "Luft um das Board"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "side_gap",
+   "expression": "6 mm",
+   "comment": "Platz links/rechts vom Board für die Kabel"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wago_bay",
+   "expression": "32 mm",
+   "comment": "Breite des Fachs für die Wago-Klemmen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "top_gap",
+   "expression": "6 mm",
+   "comment": "Luft über dem Antennenende"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bottom_gap",
+   "expression": "1 mm",
+   "comment": "Luft zwischen USB-Ende und Unterwand"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "front_gap",
+   "expression": "2 mm",
+   "comment": "Luft zwischen Bauteilen und Deckel"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "post_w",
+   "expression": "12 mm",
+   "comment": "Breite der Board-Auflagen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "post_l",
+   "expression": "3 mm",
+   "comment": "Tiefe der Board-Auflagen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "guide_t",
+   "expression": "1.2 mm",
+   "comment": "Wandstärke der Eckführungen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "guide_l",
+   "expression": "4 mm",
+   "comment": "Schenkellänge der Eckführungen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plug_w",
+   "expression": "13 mm",
+   "comment": "Breite der USB-Öffnung"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plug_h",
+   "expression": "8 mm",
+   "comment": "Höhe des USB-Steckers"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "cable_w",
+   "expression": "10 mm",
+   "comment": "Breite des Kabelausgangs"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "cable_h",
+   "expression": "12 mm",
+   "comment": "Tiefe des Kabelausgangs ab Rand"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "vent_w",
+   "expression": "1.6 mm",
+   "comment": "Breite der Lüftungsschlitze"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "vent_pitch",
+   "expression": "5 mm",
+   "comment": "Abstand der Lüftungsschlitze"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "vent_web",
+   "expression": "2 mm",
+   "comment": "Steg zwischen Lüftungsschlitz und Öffnung"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wago_wall",
+   "expression": "1.2 mm",
+   "comment": "Wand der Wago-Fächer"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "wago_wall_h",
+   "expression": "5 mm",
+   "comment": "Höhe der Wago-Fächer"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "lid_t",
+   "expression": "2.0 mm",
+   "comment": "Deckelstärke"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "lip_h",
+   "expression": "4 mm",
+   "comment": "Höhe der Deckellippe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "lip_t",
+   "expression": "1.2 mm",
+   "comment": "Wandstärke der Deckellippe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "lid_clear",
+   "expression": "0.15 mm",
+   "comment": "Luft Lippe zu Wand"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "rib_r",
+   "expression": "0.3 mm",
+   "comment": "Klemmrippen an der Lippe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pad_gap",
+   "expression": "0.5 mm",
+   "comment": "Luft zwischen Stempel und Modul"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "pad_s",
+   "expression": "8 mm",
+   "comment": "Kantenlänge des Stempels"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "dt_n",
+   "expression": "10 mm",
+   "comment": "Schiene schmal (an der Platte)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "dt_w",
+   "expression": "14 mm",
+   "comment": "Schiene breit (oben)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "dt_h",
+   "expression": "4 mm",
+   "comment": "Schienenhöhe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "dt_clear",
+   "expression": "0.2 mm",
+   "comment": "Luft in der Nut je Seite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "rail_l",
+   "expression": "40 mm",
+   "comment": "Schienenlänge"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_w",
+   "expression": "50 mm",
+   "comment": "Wandhalter Breite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_h",
+   "expression": "50 mm",
+   "comment": "Wandhalter Höhe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "plate_t",
+   "expression": "4 mm",
+   "comment": "Wandhalter Dicke"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "screw_d",
+   "expression": "4.5 mm",
+   "comment": "Schraubenloch (für 4-mm-Schrauben)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "head_d",
+   "expression": "8.5 mm",
+   "comment": "Senkkopf-Durchmesser"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "screw_dx",
+   "expression": "18 mm",
+   "comment": "Schraubenabstand von der Mitte"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_gap",
+   "expression": "0.2 mm",
+   "comment": "Senkrechter Spalt Stütze zu Schale (eine Schicht)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_t",
+   "expression": "0.8 mm",
+   "comment": "Dicke der Stützrippen (zwei Linien)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_tie",
+   "expression": "0.8 mm",
+   "comment": "Dicke der Querwand, die die Rippen verbindet"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_l",
+   "expression": "15 mm",
+   "comment": "Stützen nur so weit, entlang der schrägen Fläche ab der Standkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_h0",
+   "expression": "1 mm",
+   "comment": "Rippen ab dieser Höhe; auf dem Bett so weit weg von der Standkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_seg",
+   "expression": "20 mm",
+   "comment": "Länge eines Stützabschnitts entlang der Standkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "post_h",
+   "expression": "header_base + dupont_l + wire_bend",
+   "comment": "Höhe der Board-Auflagen"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "in_w",
+   "expression": "2 * side_gap + board_w + 2 * board_clear + wago_bay",
+   "comment": "Innenbreite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "in_h",
+   "expression": "bottom_gap + board_l + 2 * board_clear + top_gap",
+   "comment": "Innenhöhe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "in_d",
+   "expression": "post_h + pcb_t + top_h + front_gap",
+   "comment": "Innentiefe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "out_w",
+   "expression": "in_w + 2 * wall",
+   "comment": "Außenbreite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "out_h",
+   "expression": "in_h + 2 * wall",
+   "comment": "Außenhöhe"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "out_d",
+   "expression": "back_t + in_d",
+   "comment": "Tiefe der Schale ohne Deckel"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bx",
+   "expression": "wall + side_gap + board_clear",
+   "comment": "Board linke Kante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "by",
+   "expression": "wall + bottom_gap + board_clear",
+   "comment": "Board Unterkante (USB-Ende)"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bz",
+   "expression": "back_t + post_h",
+   "comment": "Board Unterseite"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bcx",
+   "expression": "bx + board_w / 2",
+   "comment": "Board Mitte X"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "usb_z",
+   "expression": "bz + pcb_t + 1.5 mm",
+   "comment": "Mitte der USB-Buchse"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bay_x",
+   "expression": "bx + board_w + board_clear + side_gap",
+   "comment": "Linke Kante des Wago-Fachs"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "bay_cx",
+   "expression": "bay_x + wago_bay / 2",
+   "comment": "Mitte des Wago-Fachs"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "groove_l",
+   "expression": "rail_l + 0.5 mm",
+   "comment": "Nutlänge ab Unterkante"
+  }
+ },
+ {
+  "command": "parameters.add",
+  "params": {
+   "name": "sup_h",
+   "expression": "sup_l * 0.70710678",
+   "comment": "Höhe der Stützen über dem Bett (Fläche 45° geneigt)"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "out_w",
+   "width": "out_h",
+   "height": "out_d",
+   "corner": [
+    0,
+    0,
+    0
+   ],
+   "body_name": "Schale"
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "in_w",
+   "width": "in_h",
+   "height": "in_d + 1 mm",
+   "corner": [
+    "wall",
+    "wall",
+    "back_t"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "post_w",
+   "width": "post_l",
+   "height": "post_h",
+   "corner": [
+    "bcx - post_w / 2",
+    "by + 0.5 mm",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "post_w",
+   "width": "post_l",
+   "height": "post_h",
+   "corner": [
+    "bcx - post_w / 2",
+    "by + board_l - post_l - 0.5 mm",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_t",
+   "width": "guide_l",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx - board_clear - guide_t",
+    "by - board_clear - guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_l",
+   "width": "guide_t",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx - board_clear - guide_t",
+    "by - board_clear - guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_t",
+   "width": "guide_l",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx - board_clear - guide_t",
+    "by + board_l + board_clear - guide_l + guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_l",
+   "width": "guide_t",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx - board_clear - guide_t",
+    "by + board_l + board_clear",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_t",
+   "width": "guide_l",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx + board_w + board_clear",
+    "by - board_clear - guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_l",
+   "width": "guide_t",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx + board_w + board_clear - guide_l + guide_t",
+    "by - board_clear - guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_t",
+   "width": "guide_l",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx + board_w + board_clear",
+    "by + board_l + board_clear - guide_l + guide_t",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "guide_l",
+   "width": "guide_t",
+   "height": "post_h + pcb_t + 1 mm",
+   "corner": [
+    "bx + board_w + board_clear - guide_l + guide_t",
+    "by + board_l + board_clear",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "2 * wago_wall + wago_w + 0.4 mm",
+   "width": "wago_wall + wago_d + 0.4 mm",
+   "height": "wago_wall_h",
+   "corner": [
+    "bay_cx - wago_w + 0.4 mm - wago_wall * 1.5 + 0 * (wago_w + 0.4 mm + wago_wall)",
+    "wall + in_h / 2 - (wago_d + 0.4 mm) / 2",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "wago_w + 0.4 mm",
+   "width": "wago_d + 0.4 mm + 1 mm",
+   "height": "wago_wall_h + 1 mm",
+   "corner": [
+    "bay_cx - wago_w + 0.4 mm - wago_wall * 1.5 + 0 * (wago_w + 0.4 mm + wago_wall) + wago_wall",
+    "wall + in_h / 2 - (wago_d + 0.4 mm) / 2 - 1 mm",
+    "back_t"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "2 * wago_wall + wago_w + 0.4 mm",
+   "width": "wago_wall + wago_d + 0.4 mm",
+   "height": "wago_wall_h",
+   "corner": [
+    "bay_cx - wago_w + 0.4 mm - wago_wall * 1.5 + 1 * (wago_w + 0.4 mm + wago_wall)",
+    "wall + in_h / 2 - (wago_d + 0.4 mm) / 2",
+    "back_t - 0.01 mm"
+   ],
+   "operation": "join",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "wago_w + 0.4 mm",
+   "width": "wago_d + 0.4 mm + 1 mm",
+   "height": "wago_wall_h + 1 mm",
+   "corner": [
+    "bay_cx - wago_w + 0.4 mm - wago_wall * 1.5 + 1 * (wago_w + 0.4 mm + wago_wall) + wago_wall",
+    "wall + in_h / 2 - (wago_d + 0.4 mm) / 2 - 1 mm",
+    "back_t"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "plug_w",
+   "width": "wall + 2 mm",
+   "height": "out_d",
+   "corner": [
+    "bcx - plug_w / 2",
+    "-1 mm",
+    "usb_z - plug_h / 2 - 0.5 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "cable_w",
+   "width": "wall + 2 mm",
+   "height": "cable_h + 1 mm",
+   "corner": [
+    "bay_cx - cable_w / 2",
+    "-1 mm",
+    "out_d - cable_h"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 0 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 1 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 2 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 3 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 4 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 5 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 6 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 7 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 8 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 9 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 10 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm",
+   "corner": [
+    "wall + 6 mm + 11 * vent_pitch",
+    "out_h - wall - 1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 0 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 1 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 2 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 6 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 7 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "in_d - 8 mm - 6 mm",
+   "corner": [
+    "wall + 6 mm + 8 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "solid.box",
+  "params": {
+   "length": "vent_w",
+   "width": "wall + 2 mm",
+   "height": "out_d - cable_h - vent_web - (back_t + 3 mm)",
+   "corner": [
+    "wall + 6 mm + 11 * vent_pitch",
+    "-1 mm",
+    "back_t + 3 mm"
+   ],
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ },
+ {
+  "command": "sketch.create",
+  "params": {
+   "plane": "XZ"
+  }
+ },
+ {
+  "command": "sketch.line",
+  "params": {
+   "points": [
+    [
+     "out_w / 2 - (dt_n + 2 * dt_clear) / 2",
+     "-(-0.01 mm)"
+    ],
+    [
+     "out_w / 2 + (dt_n + 2 * dt_clear) / 2",
+     "-(-0.01 mm)"
+    ],
+    [
+     "out_w / 2 + (dt_w + 2 * dt_clear) / 2",
+     "-(-0.01 mm + dt_h + dt_clear)"
+    ],
+    [
+     "out_w / 2 - (dt_w + 2 * dt_clear) / 2",
+     "-(-0.01 mm + dt_h + dt_clear)"
+    ]
+   ],
+   "closed": true
+  }
+ },
+ {
+  "command": "sketch.finish",
+  "params": {}
+ },
+ {
+  "command": "solid.extrude",
+  "params": {
+   "distance": "groove_l + 1 mm",
+   "start_offset": "-1 mm",
+   "operation": "cut",
+   "targets": [
+    "Schale"
+   ]
+  }
+ }
+]
