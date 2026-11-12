@@ -4,3 +4,7 @@ secrets.yaml
 
 # WireViz-Container legt hier seinen Font-Cache ab
 docs/.cache/
+
+# SolidCraft-Sicherungen und Python-Cache
+cad/*.sc.bak
+__pycache__/
